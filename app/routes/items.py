@@ -29,3 +29,18 @@ def read_item(item_id: int, db: Session = Depends(get_db)):
     if not db_item:
         raise HTTPException(status_code=404, detail="Item not found")
     return db_item
+
+@router.put("/{item_id}", response_model=schemas.ItemRead)
+def update_item(item_id: int, item_in: schemas.ItemUpdate, db: Session = Depends(get_db)):
+    db_item = crud.update_item(db, item_id, item_in)
+    if not db_item:
+        raise HTTPException(status_code=404, detail="Item not found")
+    return db_item
+
+@router.delete("/{item_id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_item(item_id: int, db: Session = Depends(get_db)):
+    deleted = crud.delete_item(db, item_id)
+    if not deleted:
+        raise HTTPException(status_code=404, detail="Item not found")
+    return None
+

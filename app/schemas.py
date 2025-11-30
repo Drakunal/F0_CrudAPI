@@ -20,3 +20,8 @@ class ItemRead(BaseModel):
 
     class Config:
         orm_mode = True
+        
+class ItemUpdate(BaseModel):
+    name: str
+    description: Optional[str] = None
+
