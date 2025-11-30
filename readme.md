@@ -1,5 +1,3 @@
----
-
 # F0 CRUD API — FastAPI + SQLite (Mac + Termux Mobile Server)
 
 A minimal, production-minded **FastAPI + SQLite CRUD API**, designed to verify that your environment works correctly on **macOS**, and even when running your **Android phone as a server using Termux**.
@@ -327,5 +325,3 @@ nohup.out
 # 📜 License
 
 MIT License — you may use this project freely for personal or commercial projects.
-
----
